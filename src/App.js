@@ -1,5 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -8,28 +7,32 @@ import {
 } from "react-router-dom";
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import VolunteerService from './components/VolunteerService/VolunteerService';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+
     <Router>
-      <div>
-        <Route path="/">
-        <Header />
-        </Route>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        <Header></Header>
         <Switch>
-          <Route path="/about">
-            <Header />
+          <Route path="/login">
+            <Login />
           </Route>
-          <Route path="/users">
-          </Route>
+          <PrivateRoute path="/volunteer-service">
+            <VolunteerService></VolunteerService>
+          </PrivateRoute>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
-      </div>
     </Router>
+    </UserContext.Provider>
   );
 }
 

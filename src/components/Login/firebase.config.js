@@ -11,4 +11,4 @@
   };
   // Initialize Firebase
 
-  export default firebaseConfig();
+  export default firebaseConfig;
