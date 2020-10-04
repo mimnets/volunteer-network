@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import Home from '../Home/Home';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const VolunteerServices = (props) => {
     const {title, img} = props.vservices;
+    const history = useHistory();
+    
+    const handleClick = () => {
+        console.log('clcik working');
+        history.push('/volunteer-service')
+    }
     return (
         <div>
-            <div>
+            <div onClick={handleClick}style={{border: '1px solid gray'}}>
             <img src={img} alt=""/>
             <h1>{title}</h1>
             </div>
@@ -14,3 +20,4 @@ const VolunteerServices = (props) => {
 };
 
 export default VolunteerServices;
+

@@ -9,7 +9,7 @@ const Login = () => {
         isSignedIn: false,
         name:'',
         email:'',
-        password:''
+        password:'',
     })
 
     initializeLoginFramework();
