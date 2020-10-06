@@ -2,12 +2,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 const VolunteerServices = (props) => {
-    const {title, img} = props.vservices;
+    const {title, img, _id} = props.vservices;
     const history = useHistory();
     
     const handleClick = () => {
-        console.log('clcik working');
-        history.push('/volunteer-service')
+        history.push(`/volunteer-service/${_id}`)
     }
     return (
         <div>
