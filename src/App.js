@@ -10,6 +10,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import VolunteerService from './components/VolunteerService/VolunteerService';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Register from './components/Register/Register';
 
 export const UserContext = createContext();
 
@@ -24,8 +25,8 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <PrivateRoute path="/volunteer-service/:id">
-            <VolunteerService></VolunteerService>
+          <PrivateRoute path="/register/:id">
+            <Register></Register>
           </PrivateRoute>
           <Route path="/">
             <Home />

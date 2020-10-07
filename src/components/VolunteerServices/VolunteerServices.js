@@ -6,7 +6,7 @@ const VolunteerServices = (props) => {
     const history = useHistory();
     
     const handleClick = () => {
-        history.push(`/volunteer-service/${_id}`)
+        history.push(`/register/${_id}`)
     }
     return (
         <div>

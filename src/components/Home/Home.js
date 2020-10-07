@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div>
             {
-                volunteerSrvices.map(service => <VolunteerServices vservices={service}></VolunteerServices>)
+                volunteerSrvices.map(service => <VolunteerServices vservices={service} key={service._id}></VolunteerServices>)
             }
         </div>
     );

@@ -4,7 +4,7 @@ import Register from '../Register/Register';
 
 const VolunteerService = () => {
     const [data, setData] = useState([]);
-
+    const {id} = useParams();
     useEffect(() =>{
         fetch("http://localhost:3001/home")
         .then(response => response.json())
@@ -13,13 +13,12 @@ const VolunteerService = () => {
         })
 
     },[])
-    const {id} = useParams();
-
-    const vs = data.find( pd => pd._id === id)
-    const {title} = vs[0];
+    const sdata = data.find( dt => dt._id === id )
     return (
         <div>
-            <h1>{title}</h1>
+            {
+                <Register></Register>
+            }
         </div>
     );
 };
