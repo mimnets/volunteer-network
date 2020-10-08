@@ -16,10 +16,13 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const backStyle = ({
+    background: 'black'
+  })
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
 
-    <Router>
+    <Router className={backStyle}>
         <Header></Header>
         <Switch>
           <Route path="/login">
