@@ -8,9 +8,9 @@ import {
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
-import VolunteerService from './components/VolunteerService/VolunteerService';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Register from './components/Register/Register';
+import Events from './components/Events/Events';
 
 export const UserContext = createContext();
 
@@ -30,6 +30,9 @@ function App() {
           </Route>
           <PrivateRoute path="/register/:id">
             <Register></Register>
+          </PrivateRoute>
+          <PrivateRoute path="/events/">
+            <Events></Events>
           </PrivateRoute>
           <Route path="/">
             <Home />

@@ -1,41 +1,29 @@
+import { Button, Card, CardHeader, CardMedia, Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import { CardHeader } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
 
-
-const VolunteerServices = (props) => {
-    const { title, img, _id } = props.vservices;
-    const history = useHistory();
+const EventsList = (props) => {
+    const {title, description, img} = props.eventsList;
     const useStyles = makeStyles((theme) => ({
         root: {
-            maxWidth: 300,
+            maxWidth: 200,
             alignItems: 'center'
         },
         
         media: {
-            height: 200,
+            height: 100,
             paddingTop: '56.25%', // 16:9
         },
         control: {
             padding: theme.spacing(2),
         },
     }));
-
     const classes = useStyles();
-    const [spacing, setSpacing] = React.useState(2);
-    const handleClick = () => {
-        history.push(`/register/${_id}`)
-    }
+    
     return (
-
         <div container className={classes.root}>
             <Grid>
                 <Grid item xs>
-                    <Card onClick={handleClick}>
+                    <Card>
                         <CardMedia
                             className={classes.media}
                             image={img}
@@ -44,6 +32,7 @@ const VolunteerServices = (props) => {
                         <CardHeader
                             title={title}
                         />
+                        <Button variant="contained" color="primary">Cancel</Button>
                         </Card>
                     </Grid>
             </Grid>
@@ -51,5 +40,4 @@ const VolunteerServices = (props) => {
     );
 };
 
-export default VolunteerServices;
-
+export default EventsList;
