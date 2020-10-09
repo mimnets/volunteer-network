@@ -12,18 +12,10 @@ const VolunteerServices = (props) => {
     const history = useHistory();
     const useStyles = makeStyles((theme) => ({
         root: {
-            maxWidth: 345,
-            flexGrow: 1
+            maxWidth: 300,
+            alignItems: 'center'
         },
-        fl:{
-                flex: 1,
-                top: 60,
-                flexDirection: "row",
-                justifyContent: "space-around",
-                flexWrap: "wrap",
-                marginBottom: 10
-            
-        },
+        
         media: {
             height: 200,
             paddingTop: '56.25%', // 16:9
@@ -40,23 +32,19 @@ const VolunteerServices = (props) => {
     }
     return (
 
-        <div>
-            <Grid container className={classes.fl} spacing={2}>
-                <Grid item xs={12}>
-                    <Grid container justify="center" spacing={spacing}>
-                    <Card className={classes.root} onClick={handleClick}>
-                <CardMedia
-                    className={classes.media}
-                    image={img}
-                    title={title}
-                />
-                <CardHeader
-                    title={title}
-                />
-            </Card>
+        <div container className={classes.root}>
+                <Grid item xs>
+                    <Card onClick={handleClick}>
+                        <CardMedia
+                            className={classes.media}
+                            image={img}
+                            title={title}
+                        />
+                        <CardHeader
+                            title={title}
+                        />
+                        </Card>
                     </Grid>
-                </Grid>
-            </Grid>
         </div>
     );
 };

@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
         margin: theme.spacing(1),
-        width: '25ch',
+        width: '30ch',
       },
     },
   }));
@@ -58,14 +58,13 @@ const Register = () => {
                 <br/>
                 <TextField id="standard-basic" label={loggedInUser.email} />
                 <br/>
-                <input type="text" placeholder={loggedInUser.email} name="email"/>
                 <br/>
-                <label for="date">Date:</label>
-                <input type="date" format="dd-MM-yyyy" name="date" value={selectedDate.regDate} onChange={handleDate}/>
+                {/* <label for="date">Date:</label>
+                <input type="date" format="dd-MM-yyyy" name="date" value={selectedDate.regDate} onChange={handleDate}/> */}
                 <br/>
-                <input type="text" placeholder="Description" id="description" name="description" />
+                <TextField id="standard-basic" label="Description" />
                 <br/>
-                <input type="text" placeholder={vs.title} name="title"/>
+                <TextField id="standard-basic" label={vs.title} />
                 <br/>
                 <button onClick={handleRegistration}>Register</button>
             </form>
