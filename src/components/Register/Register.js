@@ -47,7 +47,10 @@ const Register = () => {
        const addUser = {...loggedInUser, ...vs, ...details};
        fetch('http://localhost:3001/addUser', {
            method: 'POST',
-           headers:{'content-type': 'application/json'},
+           headers:{
+               'content-Type': 'application/json',
+               'Accept': 'application/json'
+            },
            body: JSON.stringify(addUser)
        })
        .then(res => res.json())

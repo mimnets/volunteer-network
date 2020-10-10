@@ -32,9 +32,9 @@ const VolunteerServices = (props) => {
     }
     return (
 
-        <div container className={classes.root}>
-            <Grid>
-                <Grid item xs>
+        <div>
+            <Grid container className={classes.root} spacing={2}>
+                <Grid item xs={12}>
                     <Card onClick={handleClick}>
                         <CardMedia
                             className={classes.media}

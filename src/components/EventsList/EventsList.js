@@ -1,4 +1,4 @@
-import { Button, Card, CardHeader, CardMedia, Grid, makeStyles } from '@material-ui/core';
+import { Button, Card, CardContent, CardHeader, CardMedia, FormLabel, Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -7,7 +7,6 @@ const EventsList = (props) => {
     const useStyles = makeStyles((theme) => ({
         root: {
             maxWidth: 200,
-            alignItems: 'center'
         },
         
         media: {
@@ -19,8 +18,9 @@ const EventsList = (props) => {
         },
     }));
     const classes = useStyles();
-    const {id} = useParams();
-    const deleteEvent = () => {
+    
+    
+    function deleteEvent(id){
         fetch(`http://localhost:3001/delete/${id}`,{
             method: 'DELETE'
         })
@@ -28,11 +28,12 @@ const EventsList = (props) => {
         .then(result => {
             console.log(result);
         })
+        
     }
     return (
-        <div container className={classes.root}>
-            <Grid>
-                <Grid item xs>
+        <div>
+            <Grid container className={classes.root} spacing={2}>
+                <Grid item xs={12}>
                     <Card>
                         <CardMedia
                             className={classes.media}
@@ -42,7 +43,9 @@ const EventsList = (props) => {
                         <CardHeader
                             title={title}
                         />
-                        <Button variant="contained" color="primary" onClick={deleteEvent}>Cancel</Button>
+                        <FormLabel>{description}</FormLabel>
+                        <br/>
+                        <Button variant="contained" color="primary" onClick={() => deleteEvent(`${_id}`)}>Cancel</Button>
                         </Card>
                     </Grid>
             </Grid>
