@@ -35,7 +35,7 @@ const Register = () => {
 
     const {id} = useParams();
     useEffect(() =>{
-       fetch(`http://localhost:3001/vservice/${id}`)
+       fetch(`https://desolate-peak-23536.herokuapp.com/vservice/${id}`)
        .then(res => res.json())
        .then(data =>{
         // console.log(data)
@@ -45,7 +45,7 @@ const Register = () => {
    
    const handleRegistration = () => {
        const addUser = {...loggedInUser, ...vs, ...details};
-       fetch('http://localhost:3001/addUser', {
+       fetch('https://desolate-peak-23536.herokuapp.com/addUser', {
            method: 'POST',
            headers:{
                'content-Type': 'application/json',

@@ -22,7 +22,7 @@ const EventsList = (props) => {
     
     
     function deleteEvent(id){
-        fetch(`http://localhost:3001/delete/${id}`,{
+        fetch(`https://desolate-peak-23536.herokuapp.com/delete/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())
