@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import EventsList from '../EventsList/EventsList';
+import './Events.css'
 
 const Events = () => {
     const [events, setEvents] = useState([]);
@@ -28,7 +29,7 @@ const Events = () => {
 // },[])
     
     return (
-        <div>
+        <div className='events-container'>
             {
             events.map(ev => <EventsList eventsList={ev} key={ev._id}></EventsList>)
             }

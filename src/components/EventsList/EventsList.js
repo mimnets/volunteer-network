@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, CardHeader, CardMedia, FormLabel, Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import './EventsList.css';
+
 
 const EventsList = (props) => {
     const {title, description, img, _id} = props.eventsList;
@@ -31,7 +32,7 @@ const EventsList = (props) => {
         
     }
     return (
-        <div>
+        <div className='eventsList-container'>
             <Grid container className={classes.root} spacing={2}>
                 <Grid item xs={12}>
                     <Card>

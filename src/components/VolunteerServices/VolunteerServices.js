@@ -5,23 +5,17 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import { CardHeader } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
+import './VolunteerServices.css';
 
 
 const VolunteerServices = (props) => {
     const { title, img, _id } = props.vservices;
     const history = useHistory();
     const useStyles = makeStyles((theme) => ({
-        root: {
-            maxWidth: 300,
-            alignItems: 'center'
-        },
         
         media: {
             height: 200,
             paddingTop: '56.25%', // 16:9
-        },
-        control: {
-            padding: theme.spacing(2),
         },
     }));
 
@@ -32,9 +26,9 @@ const VolunteerServices = (props) => {
     }
     return (
 
-        <div>
-            <Grid container className={classes.root} spacing={2}>
-                <Grid item xs={12}>
+        <div className='service-container'>
+            <Grid>
+                <Grid>
                     <Card onClick={handleClick}>
                         <CardMedia
                             className={classes.media}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import VolunteerServices from '../VolunteerServices/VolunteerServices';
+import '../Home/Home.css'
 
 const Home = () => {
     const [volunteerSrvices, setVolunteerSrvices] = useState([]);
@@ -9,7 +10,7 @@ const Home = () => {
         .then(data => setVolunteerSrvices(data))
     },[])
     return (
-        <div>
+        <div className='home-container'>
             {
                 volunteerSrvices.map(service => <VolunteerServices vservices={service} key={service._id}></VolunteerServices>)
             }
